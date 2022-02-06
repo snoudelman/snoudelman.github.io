@@ -160,6 +160,7 @@ function multiply () {
     verify (result);
 }
 
+
 function subtract () {
     result = dice1 - dice2;
     verify (result);
