@@ -11,16 +11,31 @@ var random = true;
 const diceArray1 = [];
 const diceArray2 = [];
 
-var seed1 = xmur3("jon");
-var seed2 = xmur3("stoplookingatmycode");
+var seed1 = xmur3(today + " first dice");
+var seed2 = xmur3(today + " second dice");
 var rand1 = mulberry32(seed1());
 var rand2 = mulberry32(seed2());
+
+var today;
+var dd;
+var mm;
+var yyyy;
+var text;
 
 function choose(choice){
     user = choice;
 }
 
 document.addEventListener('DOMContentLoaded', function() {
+
+    today = new Date();
+    dd = String(today.getDate()).padStart(2, '0');
+    mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+    yyyy = today.getFullYear();
+    text = "DosDices " + today;
+
+
+    today = mm + '/' + dd + '/' + yyyy;
 
     roll ();
 
@@ -43,7 +58,7 @@ function roll() {
 
             min = Math.ceil(1);
             max = Math.floor(6);
-        
+
             dice1 = Math.floor(rand1() * (max - min) + min);
             dice2 = Math.floor(rand2() * (max - min) + min);
 
@@ -127,6 +142,7 @@ function verify (result) {
     }
 
     $('#counter').text("You won with " + counter + " actions!");
+    document.getElementById("shareButton").style = "font-size:100px;";
 }
 
 function add () {
@@ -173,4 +189,16 @@ function xmur3(str) {
         h = Math.imul(h ^ (h >>> 13), 3266489909);
         return (h ^= h >>> 16) >>> 0;
     }
+}
+
+function share () {
+  if (navigator.share) {
+    navigator.share({
+        text: 'DosDices ' + today + '\nActions: ' + counter 
+      })
+      .then(() => console.log('Successful share'))
+      .catch((error) => console.log('Error sharing', error));
+  } else {
+    console.log('Share not supported on this browser, do it the old way.');
+  }
 }
