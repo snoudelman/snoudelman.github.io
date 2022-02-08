@@ -201,5 +201,5 @@ function share() {
 }
 
 const openInstructions = () => {
-  alert("Instructions popup coming soon!");
-};
+  alert("Game Instructions\n\nGoal: Fill out all numbers (0-9), win when all are red!\n\n- You can swap the order of the dice rolls.\n- You can only use the arithmetic operations on the dice.\n- If you click on a black number, that number leaves your board (goes  red -> black).\n- If a number is red, you can't fill it again.\n");
+}
