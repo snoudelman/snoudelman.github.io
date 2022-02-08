@@ -1,44 +1,73 @@
 <!DOCTYPE html>
 
-<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script><script src="scripts.js"></script>
+<script
+  type="text/javascript"
+  src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"
+></script>
+<script src="scripts.js"></script>
 
 <html>
+  <head>
+    <script
+      src="https://kit.fontawesome.com/7c979f9c82.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
 
-<div style="text-align: center;">
-    <button onClick="remove(this.id)"  id="0" style="font-size: 100px;">0</button>
-    <button onClick="remove(this.id)"  id="1" style="font-size: 100px;">1</button>
-    <button onClick="remove(this.id)"  id="2" style="font-size: 100px;">2</button>
-    <button onClick="remove(this.id)"  id="3" style="font-size: 100px;">3</button>
-    <button onClick="remove(this.id)"  id="4" style="font-size: 100px;">4</button>
-    <button onClick="remove(this.id)"  id="5" style="font-size: 100px;">5</button>
-    <button onClick="remove(this.id)"  id="6" style="font-size: 100px;">6</button>
-    <button onClick="remove(this.id)"  id="7" style="font-size: 100px;">7</button>
-    <button onClick="remove(this.id)"  id="8" style="font-size: 100px;">8</button>
-    <button onClick="remove(this.id)"  id="9" style="font-size: 100px;">9</button>
-</div>
-
-<div style="text-align: center; padding-top:50px;padding-bottom: 50px;">
-    <img id="dice1Picture" style="height: 75px; width: 75px;">
-    <img id="dice2Picture" style="height:75px; width: 75px;">
-    <div>
-        <button style="font-size:100px;" onclick="swap()">Swap</button>
+  <div style="margin-bottom: 5px; overflow: hidden; background-color: #333" ;>
+    <div
+      style="
+        color: white;
+        padding: 14px 16px;
+        cursor: pointer;
+        font-size: 2rem;
+        position: absolute;
+      "
+      onClick="openInstructions()"
+    >
+      <i class="far fa-question-circle"></i>
     </div>
-</div>
 
-<div style="text-align: center; padding-top:50px;padding-bottom: 50px;">
-    <button style="font-size:100px;" onclick="add()">+</button>
-    <button style="font-size:100px;"onclick="multiply()">X</button>
-    <button style="font-size:100px;" onclick="divide()">/</button>
-    <button style="font-size:100px;"onclick="subtract()">-</button>
-</div>
+    <div style="font-size: 3rem; color: white; text-align: center">
+      DosDices
+    </div>
+  </div>
 
-<body>
-</body>
+  <div style="text-align: center">
+    <button onClick="remove(this.id)" id="0" style="font-size: 100px">0</button>
+    <button onClick="remove(this.id)" id="1" style="font-size: 100px">1</button>
+    <button onClick="remove(this.id)" id="2" style="font-size: 100px">2</button>
+    <button onClick="remove(this.id)" id="3" style="font-size: 100px">3</button>
+    <button onClick="remove(this.id)" id="4" style="font-size: 100px">4</button>
+    <button onClick="remove(this.id)" id="5" style="font-size: 100px">5</button>
+    <button onClick="remove(this.id)" id="6" style="font-size: 100px">6</button>
+    <button onClick="remove(this.id)" id="7" style="font-size: 100px">7</button>
+    <button onClick="remove(this.id)" id="8" style="font-size: 100px">8</button>
+    <button onClick="remove(this.id)" id="9" style="font-size: 100px">9</button>
+  </div>
 
-<div style="text-align: center;">
-    <span style="font-size:50px">ACTIONS:</span>
-    <span style="font-size:75px; color:green;" id="counter"></span>
-    <button style="display: none;" onclick="share()" id="shareButton">Share</button>
-</div>
+  <div style="text-align: center; padding-top: 50px; padding-bottom: 50px">
+    <img id="dice1Picture" style="height: 75px; width: 75px" />
+    <img id="dice2Picture" style="height: 75px; width: 75px" />
+    <div>
+      <button style="font-size: 100px" onclick="swap()">Swap</button>
+    </div>
+  </div>
 
+  <div style="text-align: center; padding-top: 50px; padding-bottom: 50px">
+    <button style="font-size: 100px" onclick="add()">+</button>
+    <button style="font-size: 100px" onclick="multiply()">X</button>
+    <button style="font-size: 100px" onclick="divide()">/</button>
+    <button style="font-size: 100px" onclick="subtract()">-</button>
+  </div>
+
+  <body></body>
+
+  <div style="text-align: center">
+    <span style="font-size: 50px">ACTIONS:</span>
+    <span style="font-size: 75px; color: green" id="counter"></span>
+    <button style="display: none" onclick="share()" id="shareButton">
+      Share
+    </button>
+  </div>
 </html>
